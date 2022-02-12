@@ -4,13 +4,13 @@ import (
 	"fmt"
 	s "strings"
 )
-p = fmt.Println
 func main() {
-	code := "PRINT hewo"
+	p = fmt.Println
+	code := 'PRINT hewo'
 	ss := strings.Fields(s)
 	keyword := ss[0]
 	if(keyword == "PRINT"){
-		arg :== ss[1]
+		arg := ss[1]
 		P(arg)
 	}
 }
