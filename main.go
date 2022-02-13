@@ -7,8 +7,8 @@ import (
 	o "os"
 )
 func main() {
-	 if len(os.Args) <= 1 {
- 		f.Printf("USAGE : %s <target_filename> \n", os.Args[0])
+	 if len(o.Args) <= 1 {
+ 		f.Printf("USAGE : %s <target_filename> \n", o.Args[0])
  		o.Exit(1)
  	}
 	fileName := o.Args[1]
@@ -20,7 +20,7 @@ func main() {
 	sliceData := s.Split(string(fileBytes), "\n") 
 	code := `PRINT hewo`
 	ss := s.Fields(code)
-	fmt.Println(sliceData)
+	f.Println(sliceData)
 	keyword := ss[0]
 	if(keyword == "PRINT"){
 		arg := ss[1]
