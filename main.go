@@ -22,7 +22,6 @@ func main() {
     	}
 	code := `PRINT hewo`
 	ss := s.Fields(code)
-	f.Println(sliceData)
 	keyword := ss[0]
 	if(keyword == "PRINT"){
 		arg := ss[1]
