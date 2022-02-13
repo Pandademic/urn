@@ -5,7 +5,7 @@ import (
 	s "strings"
 )
 func main() {
-	code := "PRINT hewo"
+	code := `PRINT hewo`
 	ss := s.Fields(code)
 	keyword := ss[0]
 	if(keyword == "PRINT"){
