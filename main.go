@@ -8,16 +8,16 @@ import (
 )
 func main() {
 	 if len(os.Args) <= 1 {
- 		fmt.Printf("USAGE : %s <target_filename> \n", os.Args[0])
- 		os.Exit(1)
+ 		f.Printf("USAGE : %s <target_filename> \n", os.Args[0])
+ 		o.Exit(1)
  	}
-	fileName := os.Args[1]
+	fileName := o.Args[1]
 	fileBytes, err := i.ReadFile(fileName)
  	if err != nil {
- 		fmt.Println(err)
- 		os.Exit(1)
+ 		f.Println(err)
+ 		o.Exit(1)
  	}
-	sliceData := strings.Split(string(fileBytes), "\n") 
+	sliceData := s.Split(string(fileBytes), "\n") 
 	code := `PRINT hewo`
 	ss := s.Fields(code)
 	fmt.Println(sliceData)
