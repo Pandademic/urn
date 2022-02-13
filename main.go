@@ -15,17 +15,24 @@ func main() {
 	defer file.Close()
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
-        	f.Println(scanner.Text())
+		code := scanner.Text()
+		ss := s.Fields(code)
+		keyword := ss[0]
+		if(keyword == "PRINT"){
+			arg := ss[1]
+			f.Println(arg)
+		}
+		if(keyword == "SET"){
+			name := ss[1]
+			val := ss[5]
+			valtype := ss[2]
+			if valType == "int"{
+				var str(name) int = int(val)
+			}
+		}
     	}
     	if err := scanner.Err(); err != nil {
         	log.Fatal(err)
     	}
-	code := `PRINT hewo`
-	ss := s.Fields(code)
-	keyword := ss[0]
-	if(keyword == "PRINT"){
-		arg := ss[1]
-		f.Println(arg)
-	}
 }
 
