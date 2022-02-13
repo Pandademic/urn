@@ -3,21 +3,22 @@ package main
 import (
 	f"fmt"
 	s "strings"
-	i "io/ioutil"
-	o "os"
+	"os"
+	"log"
 )
 func main() {
-	 if len(o.Args) <= 1 {
- 		f.Printf("USAGE : %s <target_filename> \n", o.Args[0])
- 		o.Exit(1)
- 	}
-	fileName := o.Args[1]
-	fileBytes, err := i.ReadFile(fileName)
- 	if err != nil {
- 		f.Println(err)
- 		o.Exit(1)
- 	}
-	sliceData := s.Split(string(fileBytes), "\n") 
+	 file, err := os.Open("/path/to/file.txt")
+    	if err != nil {
+        	log.Fatal(err)
+    	}
+	defer file.Close()
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+        	fmt.Println(scanner.Text())
+    	}
+    	if err := scanner.Err(); err != nil {
+        	log.Fatal(err)
+    	}
 	code := `PRINT hewo`
 	ss := s.Fields(code)
 	f.Println(sliceData)
