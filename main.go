@@ -26,9 +26,7 @@ func main() {
 			name := ss[1]
 			val := ss[5]
 			valtype := ss[2]
-			if valType == "int"{
-				var string(name) int = int(val)
-			}
+			string(name) := val
 		}
     	}
     	if err := scanner.Err(); err != nil {
