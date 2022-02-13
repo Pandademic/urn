@@ -27,7 +27,7 @@ func main() {
 			val := ss[5]
 			valtype := ss[2]
 			if valType == "int"{
-				var str(name) int = int(val)
+				var string(name) int = int(val)
 			}
 		}
     	}
